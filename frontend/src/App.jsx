@@ -20,7 +20,7 @@ function App() {
   }, [])
 
   function fetchStudents() {
-    fetch("http://localhost:5000/api/students")
+    fetch("https://student-management-mern-v2sx.onrender.com/api/students")
       .then(res => res.json())
       .then(data => {
         setStudents(data)
@@ -49,7 +49,7 @@ function App() {
 
     if (editId != null) {
       // update
-      fetch("http://localhost:5000/api/students/" + editId, {
+      fetch("https://student-management-mern-v2sx.onrender.com/api/students/" + editId, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json"
@@ -68,7 +68,7 @@ function App() {
 
     } else {
       // add new
-      fetch("http://localhost:5000/api/students", {
+      fetch("https://student-management-mern-v2sx.onrender.com/api/students", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -103,7 +103,7 @@ function App() {
   function handleDelete(id) {
     const confirm = window.confirm("Are you sure you want to delete this student?")
     if (confirm) {
-      fetch("http://localhost:5000/api/students/" + id, {
+      fetch("https://student-management-mern-v2sx.onrender.com/api/students/" + id, {
         method: "DELETE"
       })
       .then(res => res.json())
